@@ -1,4 +1,5 @@
-```r
+1. Choose working directory and upload scripts
+ - sdf
 
 Plink_file prerequisites:
   - .bim .bed .fam format
@@ -6,4 +7,4 @@ Plink_file prerequisites:
 
 a <- read.table()
   
-```
+
