@@ -1,7 +1,8 @@
-# asdf
+```r
 
 Plink_file prerequisites:
   - .bim .bed .fam format
   - No duplicated individuals
   
   
+```
