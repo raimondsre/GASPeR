@@ -7,12 +7,13 @@ checker = { fn ->
        error("\n\n-----------------\nFile $fn does not exist\n\n---\n")
 }
 
-params.workingDir = "/home/raimondsre/GWAS_pipeline"
+params.workingDir = System.getProperty("user.dir")
 params.input_dir = "${params.workingDir}/input_data"
-params.input_pat = "RigaGWAS_2017"
-params.pheno = "${params.input_dir}/FULL_pheno_T2D.txt"
-inpat = "${params.input_dir}/${params.input_pat}"
-params.output_dir = "${params.workingDir}/output_data/${params.input_pat}"
+params.input = "plink"
+params.pheno_file = "phenotype.txt"
+params.pheno = "${params.input_dir}/${params.pheno_file}"
+inpat = "${params.input_dir}/${params.input}"
+params.output_dir = "${params.workingDir}/output_data/${params.input}"
 params.output = "${params.workingDir}/output_data"
 
 raw_ch       = Channel.create()
@@ -26,7 +27,6 @@ process executePermissionForScripts {
         script:
 	"""
 	
-	module load R/R-3.4
         chmod +x "${bin}Iterative_Missingness.sh" "${bin}highLDregions4bim_b37.awk" "${bin}IndividualIBD.R" "${bin}PCA.sh" "${bin}PC-VS-OUTCOME_IN_R_SHORT.R" "${bin}PC-VS-OUTCOME_IN_R_FULL.R" "${bin}PlotPCs.R" "${bin}IdHets.R" "${bin}makeChunks.sh"
 	mkdir -p ${params.output_dir}
 	mkdir -p ${params.output}
@@ -129,7 +129,6 @@ process pruningLD {
 	shell:
 	base = bed.baseName
         '''
-	module load R/R-3.4
 	plink --bfile !{base} --indep-pairwise 1500 150 0.2 --out !{base}.LD_one
 	plink --bfile !{base} --extract !{base}.LD_one.prune.in --make-bed --out !{base}.LD_two
 	awk -f "!{bin}highLDregions4bim_b37.awk" !{base}.LD_two.bim > !{base}.highLDexcludes
@@ -166,7 +165,6 @@ process PCA {
 	IBD_cleaned = bed.baseName
         LD_IBD = plinks[0].baseName
         """
-        module load R/R-3.4
 	R --file=${bin}genoDistOrder.R --args ${LD_IBD}
 	plink --bfile ${LD_IBD} --exclude ${LD_IBD}.snpoutoforder.txt --make-bed --out ${LD_IBD}
 
@@ -192,7 +190,6 @@ process heteroziogistyTes {
         LD = plinks[0].baseName
         outliers = "${LD}.het.LD_het_outliers_sample_exclude"
         """
-        module load R/R-3.4
 	plink --bfile ${LD} --ibc --out ${LD}.het
         R --file="${bin}IdHets.R" --args ${LD}.het
         plink --bfile ${LD} --remove $outliers --make-bed --out ${LD}.LD_het_cleaned
@@ -374,7 +371,7 @@ impute2Map2.each { chrom, fileList ->
 
 impute2MapChannel2.close()
 
-input=params.input_pat
+input=params.input
 
 process impute2Concat {
 
@@ -500,7 +497,7 @@ process gwasGraphs {
   script:
   """
   ##First argument will be paired with ".whole.post_imp.ChrPosA1A2.post_imputation_conc_analysis.assoc.logistic" and read in. Second argument can be specified for title of the table.
-  R --file=${bin}MPlot.R --args ${params.input_pat}
+  R --file=${bin}MPlot.R --args ${params.input}
 
   """
 }
