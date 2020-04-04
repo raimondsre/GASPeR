@@ -1,5 +1,5 @@
 1. Choose working directory and upload scripts
- - sdf
+    - sdf
 
 Plink_file prerequisites:
   - .bim .bed .fam format
