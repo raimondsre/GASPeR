@@ -8,10 +8,8 @@ To perform full analysis, prepare environment and simply type in the following c
 where ```plink``` is prefix of .bim .bed .map files.
 
 
-<img
-src="GWAS-PRS-Piepeline
-/github_example.pdf"
-raw=true
-alt="Subject Pronouns"
-style="margin-right: 10px;"
-/>
+<p align="center">
+<a href="https://github.com/raimondsre/GWAS-PRS-Piepeline/blob/master/github_example.png">
+<img height="460px" width="680px">
+</a>
+</p>
