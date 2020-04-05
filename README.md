@@ -7,4 +7,5 @@ To perform full analysis, prepare environment and simply type in the following c
 
 where ```plink``` is prefix of .bim .bed .map files.
 
-
+Output manhattan plot:
+![](link-to-image)
