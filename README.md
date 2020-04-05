@@ -7,9 +7,7 @@ To perform full analysis, prepare environment and simply type in the following c
 
 where ```plink``` is prefix of .bim .bed .map files.
 
+One of the output graphs visualising association analysis:
 
-<p align="center">
-<a href="https://github.com/raimondsre/GWAS-PRS-Piepeline/blob/master/github_example.png">
-<img height="460px" width="680px">
-</a>
-</p>
+![Manhattan_plot](https://github.com/raimondsre/GWAS-PRS-Piepeline/blob/master/github_example.png?raw=true)
+
