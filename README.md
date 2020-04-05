@@ -5,9 +5,9 @@ To perform full analysis, prepare environment and simply type in the following c
 
 ```$ nextflow pipeline.nf --input plink```
 
-where ```plink``` is prefix of .bim .bed .map files.
+where ```plink``` is a prefix of .bim .bed .map files.
 
-One of the output graphs visualising association analysis:
+
 
 ![Manhattan_plot](https://github.com/raimondsre/GWAS-PRS-Piepeline/blob/master/github_example.png?raw=true)
 
