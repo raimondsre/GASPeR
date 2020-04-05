@@ -7,5 +7,11 @@ To perform full analysis, prepare environment and simply type in the following c
 
 where ```plink``` is prefix of .bim .bed .map files.
 
-Output manhattan plot:
-![](github_example.pdf)
+
+<img
+src="GWAS-PRS-Piepeline
+/github_example.pdf"
+raw=true
+alt="Subject Pronouns"
+style="margin-right: 10px;"
+/>
