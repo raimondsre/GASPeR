@@ -65,8 +65,7 @@ Following steps have to be completed sequentially :heavy_exclamation_mark:
     - clone /bin folder here
       - ```chmod +x``` every script file located there
 
-!!!NOT FINISHED!!!
-
+**done**
       
     
     
