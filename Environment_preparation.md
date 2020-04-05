@@ -67,7 +67,8 @@ Following steps have to be completed sequentially :heavy_exclamation_mark:
       - ```chmod +x``` every script file located there
 
 7. Run the pipeline in ```working directory```: 
-```$ nextflow pipeline.nf --input plink```
+    - **```$ nextflow pipeline.nf --input plink```**
+    
 **done**
       
     
