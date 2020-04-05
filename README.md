@@ -11,4 +11,4 @@ where ```plink``` is a prefix of .bim .bed .map files.
 
 ![Manhattan_plot](https://github.com/raimondsre/GWAS-PRS-Piepeline/blob/master/github_example.png?raw=true)
 
-_On of the outputs, namely, manhattan plot of association summary statistics. Circle size signify odds ratio._
+_One of the outputs, namely, manhattan plot of association summary statistics. Circle size signifies odds ratio._
