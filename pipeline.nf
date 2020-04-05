@@ -28,8 +28,8 @@ process executePermissionForScripts {
 	"""
 	
         chmod +x "${bin}Iterative_Missingness.sh" "${bin}highLDregions4bim_b37.awk" "${bin}IndividualIBD.R" "${bin}PCA.sh" "${bin}PC-VS-OUTCOME_IN_R_SHORT.R" "${bin}PC-VS-OUTCOME_IN_R_FULL.R" "${bin}PlotPCs.R" "${bin}IdHets.R" "${bin}makeChunks.sh"
-	mkdir -p ${params.output_dir}
 	mkdir -p ${params.output}
+	mkdir -p ${params.output_dir}
         """
 }
 
