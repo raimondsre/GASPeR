@@ -59,9 +59,14 @@ Following steps have to be completed sequentially :heavy_exclamation_mark:
       - which must contain ```plink.bed```, ```plink.bim```, ```plink.fam```, ```covariates.txt```, ```pheno.txt``` files
     - put ```PRSice``` and ```PRSice.R``` files in ```working directory```
     - put ```nextflow.nf``` pipeline script in ```working directory```
-    - put /bin folder in 
-    
-    
+    - 1000 genome reference folder ```ALL.integrated_phase1_SHAPEIT_16-06-14.nomono```
+      - first, use ```wget``` with [this](https://mathgen.stats.ox.ac.uk/impute/ALL.integrated_phase1_SHAPEIT_16-06-14.nomono.tgz) link
+      - use ```tar -vxzf``` to unzip it
+    - clone /bin folder here
+      - ```chmod +x``` every script file located there
+
+!!!NOT FINISHED!!!
+
       
     
     
