@@ -54,7 +54,8 @@ Following steps have to be completed sequentially :heavy_exclamation_mark:
       - Source code files ```PRSice```, ```PRSice.R``` must be located in ```working directory``` as pipeline runs these directly
 
 4. Ensure each tool functions properly
-5. Choose ```working directory```, it must contain:
+5. Choose ```working directory```
+6. ```working directory```must contain:
     - ```input_data``` directory
       - which must contain ```plink.bed```, ```plink.bim```, ```plink.fam```, ```covariates.txt```, ```pheno.txt``` files
     - put ```PRSice``` and ```PRSice.R``` files in ```working directory```
@@ -65,6 +66,8 @@ Following steps have to be completed sequentially :heavy_exclamation_mark:
     - clone /bin folder here
       - ```chmod +x``` every script file located there
 
+7. Run the pipeline in ```working directory```: 
+```$ nextflow pipeline.nf --input plink```
 **done**
       
     
