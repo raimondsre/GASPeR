@@ -13,7 +13,7 @@
 
 
  
-# Environment preparation
+# Building environment
 
 Following steps have to be completed sequentially :heavy_exclamation_mark: 
 
@@ -34,9 +34,12 @@ Following steps have to be completed sequentially :heavy_exclamation_mark:
       - all covariates present will be included
       - Five principal components will be automatically calculated and added to covariates after ```imputation```
 
-2. Required software:
+2. Requred platform and specs:
     - Pipeline is executed in ```linux```, no root (admin privileges) are necessary
-    - Should be run on cluster. Default parameters expect ```pbs``` system ```Torque 6.1.1.1/ Moab 9.1.1```. Change it in ```nextflow.configure``` files ```executor``` parameter
+    - Optimally run on cluster. Default parameters expect ```pbs``` system ```Torque 6.1.1.1/ Moab 9.1.1```. Change it in ```nextflow.configure``` files ```executor``` parameter
+    - One analysis of 1000 individual ```plink``` files may take up to one Terabite of memory. After analysis, generated files in ```work``` directory must be deleted manually.
+    
+3. Required software:
     - ```nextflow```19.10+ [get](https://www.nextflow.io/docs/latest/getstarted.html)
     - ```plink``` 1.9 [get](https://www.cog-genomics.org/plink/)
     - ```R``` 3.4+
@@ -48,14 +51,20 @@ Following steps have to be completed sequentially :heavy_exclamation_mark:
       - These may not work after installation, here is a possible [fix](https://www.biostars.org/p/173436/)
     - ```python```
     - ```PRSice``` 2.2+ [get](https://www.prsice.info/#executable-downloads)
-    
+      - Source code files ```PRSice```, ```PRSice.R``` must be located in ```working directory``` as pipeline runs these directly
+
+4. Ensure each tool functions properly
+5. Choose ```working directory```, it must contain:
+    - ```input_data``` directory
+      - which must contain ```plink.bed```, ```plink.bim```, ```plink.fam```, ```covariates.txt```, ```pheno.txt``` files
+    - put ```PRSice``` and ```PRSice.R``` files in ```working directory```
+    - put ```nextflow.nf``` pipeline script in ```working directory```
+    - put /bin folder in 
     
     
       
     
     
-  - No duplicated individuals
 
-a <- read.table()
   
 
