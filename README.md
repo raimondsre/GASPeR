@@ -1,4 +1,4 @@
-# FULL GWAS & PRS pipeline
+# Full GWAS & PRS pipeline
 Nextflow pipeline for full GWAS quality control, imputation, association analysis and polygenic risk score model creation&amp;visualisation
 
 To perform full analysis, follow [environment preparation](https://github.com/raimondsre/GWAS-PRS-Piepeline/blob/master/Environment_preparation.md) steps and simply type in the following command line:
