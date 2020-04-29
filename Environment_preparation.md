@@ -25,6 +25,7 @@ Following steps have to be completed sequentially :heavy_exclamation_mark:
     - ```plink.fam```
       - no duplicated Individuals
       - first and second columns are equal as no relatives allowed
+      - no missing sex allowed
     - ```plink.bed```
     - ```phenotype.txt```
       - contains three colums names "FID", "IID", "Phenotype"
