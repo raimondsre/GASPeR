@@ -4,7 +4,7 @@ cov <- args[1]
 pc <- args[2]
 
 covar <- read.table(cov,header=T)
-pcs <- read.table(pc, header=T)
+pcs <- read.table(pc)
 
 covar_pcs <- merge(covar,pcs,by=c(1,2))
 
