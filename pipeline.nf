@@ -467,7 +467,7 @@ process associationTest {
   tuple file("${input}.whole.post_imp.ChrPosA1A2.bim"), file("${input}.whole.post_imp.ChrPosA1A2.bed"),file("${input}.whole.post_imp.ChrPosA1A2.fam") from chrposa1a2
   output:
   file ("*assoc*") into GWAS_results
-  file "cov_pcs.txt" into cov_pcs
+  
   script:
   base = "${input}.whole.post_imp.ChrPosA1A2"
   covar = "${params.workingDir}/input_data/covariates.txt"
@@ -506,7 +506,7 @@ process PRS {
   storeDir params.output_dir
   input:
   tuple file("${input}.whole.post_imp.ChrPosA1A2.bim"), file("${input}.whole.post_imp.ChrPosA1A2.bed"),file("${input}.whole.post_imp.ChrPosA1A2.fam") from chrposa1a2_forPRS
-  file cov_pcs
+  
   output:
   file("*BARPLOT*")
   file("*HIGH-RES*")
@@ -514,11 +514,13 @@ process PRS {
   file("*best")
   script:
   base = "${input}.whole.post_imp.ChrPosA1A2"
+  covar = "${params.workingDir}/input_data/covariates.txt"
   """
   gawk 'BEGIN {srand()} {f = FILENAME (rand() <= 0.5 ? ".base" : ".target"); print > f}' ${base}.fam
   plink --bfile ${base} --keep ${base}.fam.base --make-bed --out ${base}.base
   plink --bfile ${base} --keep ${base}.fam.target --make-bed --out ${base}.target
-
+  plink --bfile ${base}.target --pca 5 --out pca 
+  R --file=${bin}merge_cov.R --args $covar pca.eigenvec
 plink \
 --bfile ${base}.base \
 --logistic  \
@@ -526,7 +528,7 @@ plink \
 --hide-covar \
 --out ${base}
 
-  Rscript ${params.workingDir}/PRSice.R --prsice ${params.workingDir}/PRSice --base ${base}.assoc.logistic --target ${base}.target --quantile 4 --out ${base}
+  Rscript ${params.workingDir}/PRSice.R --prsice ${params.workingDir}/PRSice --base ${base}.assoc.logistic --cov pca.eigenvec --target ${base}.target --quantile 10 --out ${base}
 
 
   """
