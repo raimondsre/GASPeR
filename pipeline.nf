@@ -206,7 +206,7 @@ params.genticMapDir = "ALL.integrated_phase1_SHAPEIT_16-06-14.nomono"
 params.chromosomeSizesFile ="${bin}b37.chrom.sizes"
 params.referenceHapsFilePattern = "ALL.chr%s.integrated_phase1_v3.20101123.snps_indels_svs.genotypes.nomono.haplotypes.gz"
 params.referenceLegendFilePattern = "ALL.chr%s.integrated_phase1_v3.20101123.snps_indels_svs.genotypes.nomono.legend.gz"
-params.referenceGeneticMapPattern = "genetic_ma p_chr%s_combined_b37.txt"
+params.referenceGeneticMapPattern = "genetic_map_chr%s_combined_b37.txt"
 params.referenceSample = "ALL.integrated_phase1_v3.20101123.snps_indels_svs.genotypes.sample"
 params.publishDirPath = "${params.output_dir}/imputation-results"
 
