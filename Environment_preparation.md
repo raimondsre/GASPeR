@@ -52,7 +52,7 @@ Following steps have to be completed sequentially :heavy_exclamation_mark:
       - These may not work after installation, here is a possible [fix](https://www.biostars.org/p/173436/)
     - ```python```
     - ```PRSice``` 2.2+ [get](https://www.prsice.info/#executable-downloads)
-      - Source code files ```PRSice```, ```PRSice.R``` must be located in ```working directory``` as pipeline runs these directly
+      - Source code files ```PRSice_linux```, ```PRSice.R``` must be located in ```working directory``` as pipeline runs these directly
 
 4. Ensure each tool functions properly
 5. Choose ```working directory```
