@@ -519,8 +519,10 @@ process PRS {
   gawk 'BEGIN {srand()} {f = FILENAME (rand() <= 0.5 ? ".base" : ".target"); print > f}' ${base}.fam
   plink --bfile ${base} --keep ${base}.fam.base --make-bed --out ${base}.base
   plink --bfile ${base} --keep ${base}.fam.target --make-bed --out ${base}.target
-  plink --bfile ${base}.target --pca 5 --out pca 
-  R --file=${bin}merge_cov.R --args $covar pca.eigenvec
+  plink --bfile ${base}.target --pca 5 --out target
+  plink --bfile ${base}.base --pca 5 --out base
+
+  R --file=${bin}merge_cov.R --args $covar base.eigenvec
 plink \
 --bfile ${base}.base \
 --logistic  \
@@ -528,7 +530,7 @@ plink \
 --hide-covar \
 --out ${base}
 
-  Rscript ${params.workingDir}/PRSice.R --prsice ${params.workingDir}/PRSice --base ${base}.assoc.logistic --cov pca.eigenvec --target ${base}.target --quantile 10 --out ${base}
+  Rscript ${params.workingDir}/PRSice.R --prsice ${params.workingDir}/PRSice --base ${base}.assoc.logistic --cov target.eigenvec --target ${base}.target --quantile 10 --out ${base}
 
 
   """
