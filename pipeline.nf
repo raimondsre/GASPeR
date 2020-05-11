@@ -530,7 +530,7 @@ plink \
 --hide-covar \
 --out ${base}
 
-  Rscript ${params.workingDir}/PRSice.R --prsice ${params.workingDir}/PRSice --base ${base}.assoc.logistic --cov target.eigenvec --target ${base}.target --quantile 10 --out ${base}
+  Rscript ${params.workingDir}/PRSice.R --prsice ${params.workingDir}/PRSice_linux --base ${base}.assoc.logistic --cov target.eigenvec --target ${base}.target --quantile 10 --out ${base}
 
 
   """
