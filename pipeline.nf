@@ -452,7 +452,7 @@ process postImpQC {
   shell:
   '''
   plink --bfile "!{input}.whole.post_imputation" --maf 0.01 --make-bed --out "!{input}.whole.post_imp.common"
-  plink --bfile "!{input}.whole.post_imp.common" --geno 0.5 --make-bed --out "!{input}.whole.post_imp.common.filtered"
+  plink --bfile "!{input}.whole.post_imp.common" --geno 0.99 --make-bed --out "!{input}.whole.post_imp.common.filtered"
   awk 'BEGIN {OFS="\t"} {$2=$1 ":" $4 ":" $5 ":" $6; print $0}' "!{input}.whole.post_imp.common.filtered.bim" > "!{input}.whole.post_imp.ChrPosA1A2.bim"
   cp "!{input}.whole.post_imp.common.filtered.bed" "!{input}.whole.post_imp.ChrPosA1A2.bed"
   cp "!{input}.whole.post_imp.common.filtered.fam" "!{input}.whole.post_imp.ChrPosA1A2.fam"
