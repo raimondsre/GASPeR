@@ -480,6 +480,7 @@ process associationTest {
 --bfile $base \
 --logistic  \
 --covar cov_pcs.txt \
+--pheno ${params.pheno}\
 --hide-covar \
 --out "${base}.post_imputation_conc_analysis"
 
@@ -527,10 +528,11 @@ plink \
 --bfile ${base}.base \
 --logistic  \
 --covar cov_pcs.txt \
+--pheno ${params.pheno}\
 --hide-covar \
 --out ${base}
 
-  Rscript ${params.workingDir}/PRSice.R --prsice ${params.workingDir}/PRSice_linux --base ${base}.assoc.logistic --cov target.eigenvec --target ${base}.target --quantile 10 --out ${base}
+  Rscript ${params.workingDir}/PRSice.R --prsice ${params.workingDir}/PRSice_linux --base ${base}.assoc.logistic --cov target.eigenvec --target ${base}.target --pheno ${params.pheno} --quantile 10 --out ${base}
 
 
   """
