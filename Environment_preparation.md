@@ -58,7 +58,7 @@ Following steps have to be completed sequentially :heavy_exclamation_mark:
 5. Choose ```working directory```
 6. ```working directory```must contain:
     - ```input_data``` directory
-      - which must contain ```plink.bed```, ```plink.bim```, ```plink.fam```, ```covariates.txt```, ```pheno.txt``` files
+      - which must contain ```plink.bed```, ```plink.bim```, ```plink.fam```, ```covariates.txt```, ```phenotype.txt``` files
     - put ```PRSice_linux``` and ```PRSice.R``` files in ```working directory```
     - put ```nextflow.nf``` pipeline script in ```working directory```
     - 1000 genome reference folder ```ALL.integrated_phase1_SHAPEIT_16-06-14.nomono```
