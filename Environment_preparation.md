@@ -7,7 +7,7 @@
    - summary statistics
    - individual PRS scores
    - manhattan plot & qq plot
-   - PRS graphs (e.g quantile plot)
+   - PRS graphs (e.g. quantile plot)
 
 
 
