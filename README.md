@@ -12,3 +12,7 @@ where ```plink``` is a prefix of .bim .bed .map files.
 ![Manhattan_plot](https://github.com/raimondsre/GWAS-PRS-Piepeline/blob/master/github_example.png?raw=true)
 
 _One of the outputs, namely, manhattan plot of association summary statistics. Circle size signifies odds ratio._
+
+### Acknowledgement
+
+Imputation part of main pipeline contains significant code snippets from [InSilicoDB](https://github.com/InSilicoDB/snp-imputation-nf) by [GenePlaza](https://github.com/InSilicoDB).
