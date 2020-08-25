@@ -30,12 +30,14 @@ Following steps have to be completed sequentially :heavy_exclamation_mark:
     - ```phenotype.txt```
       - contains three colums names "FID", "IID", "Phenotype"
       - binary phenotype (1 - control, 2 - case)
+      - no rownames, space separated
     - ```covariates.txt```
       - first two column names are "FID", "IID"
+      - no rownames, space separated
       - all covariates present will be included
       - Five principal components will be automatically calculated and added to covariates after ```imputation```
 
-2. Requred platform and specs:
+2. Required platform and specs:
     - Pipeline is executed in ```linux```, no root (admin privileges) are necessary
     - Optimally run on cluster. Default parameters expect ```pbs``` system ```Torque 6.1.1.1/ Moab 9.1.1```. Change it in ```nextflow.configure``` files ```executor``` parameter
     - One analysis of 1000 individual ```plink``` files may take up to one Terabite of memory. After analysis, generated files in ```work``` directory must be deleted manually.
