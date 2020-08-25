@@ -49,10 +49,10 @@ Following steps have to be completed sequentially :heavy_exclamation_mark:
       - packages ```ggplot2```, ```dplyr```
     - ```impute2```v2 [get](https://mathgen.stats.ox.ac.uk/impute/impute_v2.html)
     - ```shapeit```v2 [get](https://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.html)
-    - Eigensoft 6.1.4 [get](https://data.broadinstitute.org/alkesgroup/EIGENSOFT/)
+    - ```Eigensoft``` 6.1.4 [get](https://data.broadinstitute.org/alkesgroup/EIGENSOFT/)
       - ```convertf``` ```smartpca.perl``` tools are used
       - These may not work after installation, here is a possible [fix](https://www.biostars.org/p/173436/)
-    - ```python```
+    - ```python``` 3.7.3
     - ```PRSice``` 2.2+ [get](https://www.prsice.info/#executable-downloads)
       - Source code files ```PRSice_linux```, ```PRSice.R``` must be located in ```working directory``` as pipeline runs these directly
 
