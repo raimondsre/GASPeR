@@ -15,4 +15,4 @@ _One of the outputs, namely, manhattan plot of association summary statistics. C
 
 ### Acknowledgement
 
-Parameters as well as scripts supporting pipeline were selected according to Coleman et al (2016) and supporting repository [gwas_scripts](https://github.com/JoniColeman/gwas_scripts) by [Joni Coleman](https://github.com/JoniColeman). Imputation part of main pipeline contains significant code snippets from [InSilicoDB](https://github.com/InSilicoDB/snp-imputation-nf) by [GenePlaza](https://github.com/InSilicoDB).
+Parameters as well as scripts supporting pipeline were selected according to Coleman et al. (2016) and supporting repository [gwas_scripts](https://github.com/JoniColeman/gwas_scripts) by [Joni Coleman](https://github.com/JoniColeman). Imputation part of main pipeline contains significant code snippets from [InSilicoDB](https://github.com/InSilicoDB/snp-imputation-nf) by [GenePlaza](https://github.com/InSilicoDB).
